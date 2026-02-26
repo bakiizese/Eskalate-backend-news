@@ -8,7 +8,7 @@ const dailyQueue = new Queue<{ date: string }>("dailyAnalytics", {
   connection,
 });
 
-cron.schedule("* * * * *", async () => {
+cron.schedule("0 0 * * *", async () => {
   const nowGMT = new Date().toISOString().split("T")[0];
 
   try {

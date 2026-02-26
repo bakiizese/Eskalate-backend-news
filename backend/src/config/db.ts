@@ -1,9 +1,9 @@
 import { Sequelize } from "sequelize";
 
-const DB_NAME: string = "newsdb";
-const DB_USER: string = "news";
-const DB_PASSWORD: string = "pwd";
-const DB_HOST: string = "localhost";
+const DB_NAME: string = process.env.DB_NAME || "newsdb";
+const DB_USER: string = process.env.DB_USER || "news";
+const DB_PASSWORD: string = process.env.DB_PASSWORD || "pwd";
+const DB_HOST: string = process.env.DB_HOST || "localhost";
 
 const sequelize: Sequelize = new Sequelize(DB_NAME, DB_USER, DB_PASSWORD, {
   host: DB_HOST,
