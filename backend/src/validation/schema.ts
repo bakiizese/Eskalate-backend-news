@@ -43,3 +43,50 @@ export const loginSchema: ObjectSchema = Joi.object({
     "string.empty": "password is required",
   }),
 });
+
+export const articleSchema: ObjectSchema = Joi.object({
+  title: Joi.string().required().min(1).max(150).messages({
+    "string.base": "title must be a string",
+    "string.empty": "title is required",
+    "string.min": "title must be at least 1 character",
+    "string.max": "title cannot exceed 150 characters",
+    "any.required": "title is required",
+  }),
+  content: Joi.string().min(50).required().messages({
+    "string.base": "content must be a string",
+    "string.empty": "content is required",
+    "string.min": "content must be at least 50 characters",
+    "any.required": "content is required",
+  }),
+  category: Joi.string().required().messages({
+    "string.base": "category must be a string",
+    "string.empty": "category is required",
+    "any.required": "category is required",
+  }),
+  status: Joi.string().valid("Draft", "Published").default("Draft").messages({
+    "string.base": "status must be a string",
+    "any.only": "status must be Draft or Published",
+  }),
+});
+
+export const articleSchemaPut: ObjectSchema = Joi.object({
+  title: Joi.string().min(1).max(150).messages({
+    "string.base": "title must be a string",
+    "string.empty": "title is required",
+    "string.min": "title must be at least 1 character",
+    "string.max": "title cannot exceed 150 characters",
+  }),
+  content: Joi.string().min(50).messages({
+    "string.base": "content must be a string",
+    "string.empty": "content is required",
+    "string.min": "content must be at least 50 characters",
+  }),
+  category: Joi.string().messages({
+    "string.base": "category must be a string",
+    "string.empty": "category is required",
+  }),
+  status: Joi.string().valid("Draft", "Published").default("Draft").messages({
+    "string.base": "status must be a string",
+    "any.only": "status must be Draft or Published",
+  }),
+});

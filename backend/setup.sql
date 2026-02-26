@@ -1,0 +1,9 @@
+DO $$ 
+BEGIN
+  IF NOT EXISTS (SELECT FROM pg_catalog.pg_user WHERE usename = 'news') THEN
+    CREATE USER news WITH ENCRYPTED PASSWORD 'pwd';
+  END IF;
+END $$;
+
+CREATE DATABASE newsdb;
+GRANT ALL PRIVILEGES ON DATABASE newsdb TO news;
