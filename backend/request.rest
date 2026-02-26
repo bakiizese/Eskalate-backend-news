@@ -1,0 +1,72 @@
+//register
+post http://localhost:5000/auth/register
+Content-Type: application/json
+
+{
+    "name": "dani",
+    "email": "skss@gmail.com",
+    "password": "StrongPass1#",
+    "role": "author"
+}
+
+###
+//login
+post http://localhost:5000/auth/login
+Content-Type: application/json
+
+{
+    "email": "skss@gmail.com",
+    "password": "StrongPass1#"
+}
+
+###
+//author request
+post http://localhost:5000/author/articles
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIwY2ZmMTg0ZC1mNDFhLTQ1YzItOGI4Mi01ZThjMjgxMWIxNmIiLCJyb2xlIjoiYXV0aG9yIiwiaWF0IjoxNzcyMDk0MDk2LCJleHAiOjE3NzIxODA0OTZ9.bN2r2CaEJQGwp-R8crin9OqO4XilN8CHfe61pvLPiJ0
+
+{
+    "title": "newst",
+    "content": "StrongPass1#StrongPass1#StrongPass1#StrongPass1#StrongPass1#StrongPass1#",
+    "category": "newCat",
+    "status":"Published"
+}
+
+###
+get http://localhost:5000/author/articles/dashboard
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIwY2ZmMTg0ZC1mNDFhLTQ1YzItOGI4Mi01ZThjMjgxMWIxNmIiLCJyb2xlIjoiYXV0aG9yIiwiaWF0IjoxNzcyMDk0MDk2LCJleHAiOjE3NzIxODA0OTZ9.bN2r2CaEJQGwp-R8crin9OqO4XilN8CHfe61pvLPiJ0
+
+###
+get http://localhost:5000/author/articles/me?showDeleted=true
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxOWZmZjU4Yy1kZmY2LTQ0MjUtYjdjYy01MTk0ZDQ0ZjI5ODQiLCJyb2xlIjoiYXV0aG9yIiwiaWF0IjoxNzcxOTI0NTk2LCJleHAiOjE3NzIwMTA5OTZ9.-xPktmCZQ0iNDh3VtCu5YrrepSs-I3zHQcwYuaaTHrA
+
+
+
+###
+put http://localhost:5000/author/articles/3761d0f6-717c-476b-afbd-c6c97b5b251b
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxOWZmZjU4Yy1kZmY2LTQ0MjUtYjdjYy01MTk0ZDQ0ZjI5ODQiLCJyb2xlIjoiYXV0aG9yIiwiaWF0IjoxNzcxOTI0NTk2LCJleHAiOjE3NzIwMTA5OTZ9.-xPktmCZQ0iNDh3VtCu5YrrepSs-I3zHQcwYuaaTHrA
+
+{
+    "title": "newnow",
+    "status": "Published"
+}
+
+###
+DELETE http://localhost:5000/author/articles/3761d0f6-717c-476b-afbd-c6c97b5b251b
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxOWZmZjU4Yy1kZmY2LTQ0MjUtYjdjYy01MTk0ZDQ0ZjI5ODQiLCJyb2xlIjoiYXV0aG9yIiwiaWF0IjoxNzcxOTI0NTk2LCJleHAiOjE3NzIwMTA5OTZ9.-xPktmCZQ0iNDh3VtCu5YrrepSs-I3zHQcwYuaaTHrA
+
+
+//reader
+###
+get http://localhost:5000/reader/articles
+Content-Type: application/json
+
+
+###
+get http://localhost:5000/reader/articles/cab068f4-1e92-4ee2-afb8-e440ed272181
+Content-Type: application/json
+

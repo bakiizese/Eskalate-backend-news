@@ -84,7 +84,6 @@ authRouter.post("/login", async (req: Request, res: Response) => {
         Errors: [{ field: "password", message: "incorrect password" }],
       });
     }
-
     const token = gen_jwt_token({ sub: user.id, role: user.role });
 
     return res.status(200).json({
